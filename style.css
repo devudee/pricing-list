@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --color-green-deep: rgb(1 41 32);
+  --color-green: rgb(6 122 96);
+  --color-green-2: rgb(0 149 120);
+  --color-gray: rgb(138, 136, 136);
+  --color-white: rgb(248, 240, 240);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--color-green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  margin: 1.5rem 0;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pricing__card {
+  background-color: var(--color-white);
+  border-radius: 1.5rem;
+  position: relative;
+  transition: box-shadow 1s;
+}
+
+.pricing__card:hover {
+  box-shadow: 0 0 25px rgba(172, 253, 212, 0.592);
+}
+.pricing__header {
+  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: var(--color-green-2);
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.recommended {
+  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: var(--color-green);
+  position: absolute;
+  top: -1.2rem;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+}
+
+.body__top,
+.body__footer {
+  padding: 2rem 1rem;
+}
+
+.body__top ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.body__top ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-green);
+}
+
+.body__top ul li span {
+  color: var(--color-gray);
+}
+
+.body__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.body__footer h2 {
+  font-size: 2.5rem;
+  color: var(--color-green-deep);
+}
+.body__footer p {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
+
+.body__footer button {
+  border: 2px solid var(--color-green-2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  color: var(--color-green-2);
+  position: relative;
+}
+
+.body__footer button:after {
+  content: "";
+  background-color: var(--color-green-2);
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 100%;
+  border-radius: 1rem;
+  transition: bottom 1s, right 1s, border-radius 1s;
+}
+
+.body__footer button:hover::after {
+  bottom: 0;
+  right: 0;
+  border-radius: 0;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
